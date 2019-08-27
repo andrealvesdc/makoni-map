@@ -23,7 +23,8 @@ from makoni.views import helper
 from makoni.views import about
 from makoni.views import contact
 from makoni.views import error
-
+from django.conf import settings
+from django.conf.urls.static import static
 """
  -> Urls padrão;
 """
@@ -38,3 +39,5 @@ urlpatterns = [
     path('error/', error),
     path('',index)
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

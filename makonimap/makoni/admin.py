@@ -5,7 +5,7 @@ from .models import Endereco
 from .models import Photo
 from .models import Localization
 from .models import Router
-
+from .models import Image
 # Register your models here.
 
 
@@ -14,3 +14,4 @@ admin.site.register(Endereco)
 admin.site.register(Photo)
 admin.site.register(Localization)
 admin.site.register(Router)
+admin.site.register(Image)

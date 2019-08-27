@@ -53,10 +53,22 @@ class Person(models.Model):
         return self.name
 
 
+class Image(models.Model):
+    description = models.CharField(max_length=300,default=None,null=True)
+    original = models.ImageField(
+        null=True,
+        blank =True,
+        upload_to = "images/locations"
+
+    )
+    def __str__(self):
+        return self.description
+
 class Photo(models.Model):
     description = models.CharField(max_length=500,default=None,null=True)
     reference_point = models.CharField(max_length=300,default=None,null=True)
     url_photo = models.CharField(max_length=1000,default=None,null=True)
+    images_origin = models.ManyToManyField(Image,verbose_name="galery of images")
     def __str__(self):
         return self.reference_point
 
@@ -69,7 +81,7 @@ class Localization(models.Model):
     photos= models.ManyToManyField(Photo,verbose_name='list of photos')
 
     def __str__(self):
-        return self.endereco
+        return self.description
 
 
 class Router(models.Model):

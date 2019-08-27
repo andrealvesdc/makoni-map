@@ -10,6 +10,12 @@ from .manipulatorJson import Generator
 global KEY_MAPS
 KEY_MAPS = "AIzaSyBMglCkfaEDPOIdLPfCEfSUVI6rl1ONQNQ"
 
+
+"""
+ -> Espera um parametro de busca:
+    -> "Rio Tinto Paraiba" Exemplo;
+    -> Marca no mapa as informações relevantes sobre o ponto turistico encontrado,.
+"""
 def search_adress(request):
     if request.method == "GET":
         map_app = Map(KEY_MAPS)
@@ -19,8 +25,6 @@ def search_adress(request):
             result = generator.createMyResponse(xd)
         
         return render(request,'map.html')
-
-    
 
 
 # retorna a pagina inicial contendo o mapa de navegação;
