@@ -39,6 +39,9 @@ class Endereco(models.Model):
     )
     estado = models.CharField(max_length=25,choices=state)  
 
+    def __str__(self):
+        return self.rua
+
 class Person(models.Model):
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=100)
@@ -64,6 +67,10 @@ class Localization(models.Model):
     description = models.CharField(max_length=500,default=None,null=True)
     endereco = models.ForeignKey(Endereco,on_delete=models.CASCADE)
     photos= models.ManyToManyField(Photo,verbose_name='list of photos')
+
+    def __str__(self):
+        return self.endereco
+
 
 class Router(models.Model):
     router = models.CharField(max_length=30,default=None)

@@ -15,9 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from makoni.views import activate
+from makoni.views import search_adress
+from makoni.views import index
+from makoni.views import login
+from makoni.views import create_account
+from makoni.views import helper
+from makoni.views import about
+from makoni.views import contact
 
+
+"""
+ -> Urls padrão;
+"""
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('activatemap/',activate)
+    path('search/',search_adress),
+    path('login/',login),
+    path('createuser',create_account),
+    path('ajuda/',helper),
+    path('sobre/',about),
+    path('contato/',contact),
+    path('',index)
 ]
