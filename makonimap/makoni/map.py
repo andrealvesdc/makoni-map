@@ -7,3 +7,5 @@ class Map(object):
         if self.key != None:
             self.instance = googlemaps.Client(key=self.key)
             print("Instance created")
+
+    
