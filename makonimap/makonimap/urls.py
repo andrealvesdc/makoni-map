@@ -22,7 +22,7 @@ from makoni.views import create_account
 from makoni.views import helper
 from makoni.views import about
 from makoni.views import contact
-
+from makoni.views import error
 
 """
  -> Urls padrão;
@@ -35,5 +35,6 @@ urlpatterns = [
     path('ajuda/',helper),
     path('sobre/',about),
     path('contato/',contact),
+    path('error/', error),
     path('',index)
 ]

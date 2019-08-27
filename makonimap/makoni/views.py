@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from .map import Map
 from .form import FormLogin
+from .manipulatorJson import Generator
 
 # Create your views here.
 #Static;
@@ -13,7 +14,10 @@ def search_adress(request):
     if request.method == "GET":
         map_app = Map(KEY_MAPS)
         xd = map_app.geocode("Rio Tinto Paraiba")
-        print(xd)
+        if xd != None:
+            generator = Generator("Rio Tinto Paraiba")
+            result = generator.createMyResponse(xd)
+        
         return render(request,'map.html')
 
     
