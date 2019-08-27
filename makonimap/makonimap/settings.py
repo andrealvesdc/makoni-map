@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'makoni',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,6 +74,9 @@ WSGI_APPLICATION = 'makonimap.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
+# Change Database Sqlite3  -- for PSQL -PostgreSQL
+# Install dependency ps2co abb;
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
