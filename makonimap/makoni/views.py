@@ -22,8 +22,7 @@ def search_adress(request):
         xd = map_app.geocode("Rio Tinto Paraiba")
         if xd != None:
             generator = Generator("Rio Tinto Paraiba")
-            result = generator.createMyResponse(xd)
-        
+            result = generator.createMyResponse(xd)   
         return render(request,'map.html')
 
 

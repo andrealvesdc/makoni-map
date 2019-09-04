@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 # Entidades que representam o modelo de negocio do makoni-map
 
+
+
 class Endereco(models.Model):
     rua = models.CharField(max_length=30)
     cep = models.CharField(max_length=30)
@@ -79,7 +81,15 @@ class Localization(models.Model):
     description = models.CharField(max_length=500,default=None,null=True)
     endereco = models.ForeignKey(Endereco,on_delete=models.CASCADE)
     photos= models.ManyToManyField(Photo,verbose_name='list of photos')
-
+    nivel_acessibilidade = (
+        ('0%','0%'),
+        ('20%','20%'),
+        ('40%','40%'),
+        ('60%','60%'),
+        ('80%','80%'),
+        ('100%','100%')
+    )
+    acessibilidade = models.CharField(max_length=30,choices=nivel_acessibilidade)
     def __str__(self):
         return self.description
 
