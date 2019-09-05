@@ -3,20 +3,62 @@
 <head>
 
   <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Google Maps JavaScript API by Andre Alves</title>
+  <title>MakoniMap</title>
 
   <style>
+
     #map{
-      height:300px;
+      height:770px;
       width:100%;
     }
-  </style>
+
+    #barra {
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(247, 245, 245);
+    }
+
+    li {
+        float: right;
+    }
+
+    li a {
+        display: block;
+        color: rgb(90, 90, 90);
+        font-family: arial;
+        font-weight: bold;
+        text-align: right;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+
+ </style>
 
 </head>
 <body>
-  <h4>Google maps API</h4>
+
+
+  <div id="barra">
+    <ul>
+        <li><a id="login" href="index.htm" onclick="curSec(this.id)">Login</a></li>
+        <li><a id="ajuda" href="ajuda.htm" onclick="curSec(this.id)">Ajuda</a></li>
+        <li><a id="contato" href="contato.htm" onclick="curSec(this.id)">Contato</a></li>
+        <li><a id="sobre" href="sobre.htm" onclick="curSec(this.id)">Sobre</a></li>
+    </ul>
+  </div>
+
+
+
   <div id="map"></div>
   <script>
 
@@ -24,8 +66,8 @@
 
       // Opções do mapa
       var options = {
-        zoom:15,
-        center:{lat:-6.8042 ,lng:-35.0779}
+        zoom:16,
+        center:{lat:-6.8070 ,lng:-35.0790}
       }
 
       // Instanciando um mapa
@@ -50,18 +92,137 @@
       // Adicionando um array de pontos no mapa
       var markers = [
         {
-          coords:{lat:-6.8094096,lng:-35.0828959},
+          coords:{lat:-6.8040081,lng:-35.0807300},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3>Informações do ponto <br> Imagens <br> Nivel de acessibilidade </h3>'
+          content:'<h3>Mercadinho compre mais <br> Imagens <br> Nivel de acessibilidade </h3>'
         },
+
         {
-          coords:{lat:-6.8041099,lng:-35.0811969},
-          content:'<h3>Meu ponto 01</h3>'
+          coords:{lat:-6.8028216,lng:-35.0819699},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3>Posto de saúde PSF <br> Imagens <br> Nivel de acessibilidade </h3> '
         },
+
         {
-          coords:{lat:-6.8079056,lng:-35.0829950},
-          content:'<h3>Meu ponto 02</h3>'
-        }
+          coords:{lat:-6.804918,lng:-35.083300},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3>SESI <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.805372,lng:-35.081839},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Escola estadual O burity <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.806538,lng:-35.081517},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Restaurantes Praça da Vitoria <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.811446,lng:-35.079790},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Correios <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.810232,lng:-35.078009},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Fórum Eleitoral <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.810373,lng:-35.077551},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Hospital Municipal <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.810743,lng:-35.078235},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Terraço Pizzaria <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.810743,lng:-35.078235},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Terraço Pizzaria <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.808706,lng:-35.075671},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Secretaria Municipal de Finanças <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.808706,lng:-35.075671},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Secretaria Municipal de Finanças <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.808477,lng:-35.076315},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Banco do Brasil <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.808030,lng:-35.077195},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Praça João Pessoa <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.808526,lng:-35.075853},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Farmácia Rio Tinto <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.807291,lng:-35.077650},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Super Mercado Santa Rita <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.806274,lng:-35.078450},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Super Mercado do Brizola <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.805162,lng:-35.075656},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> UFPB campus IV <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.811121,lng:-35.074630},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Prefeitura de Rio Tinto <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.810843,lng:-35.078471},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Conveniencia <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.809364,lng:-35.076694},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Posto de Gasolina <br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
+        {
+          coords:{lat:-6.806099,lng:-35.073970},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h3> Central de aulas UFPB Campus IV<br> Imagens <br> Nivel de acessibilidade </h3> '
+        },
+
       ];
 
       // Loop através de marcadores

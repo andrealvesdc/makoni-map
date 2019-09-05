@@ -38,13 +38,13 @@ MEDIA_URL = '/images/'
 # Application definition
 
 INSTALLED_APPS = [
-    'makoni',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'makoni',
 ]
 
 MIDDLEWARE = [
