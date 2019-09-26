@@ -11,7 +11,7 @@
   <style>
 
     #map{
-      height:770px;
+      height:560px;
       width:100%;
     }
 
@@ -25,6 +25,11 @@
         padding: 0;
         overflow: hidden;
         background-color: rgb(247, 245, 245);
+    }
+
+    h3 {
+      text-align: center;
+      color: #6C7B8B;
     }
 
     li {
@@ -73,154 +78,160 @@
       // Instanciando um mapa
       var map = new google.maps.Map(document.getElementById('map'), options);
 
-      // Adicionando um novo pontos no mapa
-      /* var marker = new google.maps.Marker({
-        position:{lat:-6.8094096,lng:-35.0828959},
-        map:map,
-        icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-      });
-
-      var infoWindow = new google.maps.InfoWindow({
-        content:'<h3>Informações do ponto <br> Imagens <br> Nivel de acessibilidade </h3>'
-      });
-
-      marker.addListener('click', function(){
-        infoWindow.open(map, marker);
-      });
-      */
-
-      // Adicionando um array de pontos no mapa
       var markers = [
         {
           coords:{lat:-6.8040081,lng:-35.0807300},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3>Mercadinho compre mais <br> Imagens <br> Nivel de acessibilidade </h3>'
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
+
 
         {
           coords:{lat:-6.8028216,lng:-35.0819699},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3>Posto de saúde PSF <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> PSF </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/1.2.jpg"/> </div> <div class = "Fundo"> <p>Posto médico PSF </p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.804918,lng:-35.083300},
-          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3>SESI <br> Imagens <br> Nivel de acessibilidade </h3> '
+         iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> SESI </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/2.3.jpg"/> </div> <div class = "Fundo"> <p>SESI da cidade </p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.805372,lng:-35.081839},
-          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Escola estadual O burity <br> Imagens <br> Nivel de acessibilidade </h3> '
+         iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Escola Estadual </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/3.3.jpg"/> </div> <div class = "Fundo"> <p>Escola Estadual Integral da Cidade </p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.806538,lng:-35.081517},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Restaurantes Praça da Vitoria <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Praça da Vitoria </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/6.1.jpg"/> </div> <div class = "Fundo"> <p>Praça e centro esportivo da cidade</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.811446,lng:-35.079790},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Correios <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Fórum Eleítoral </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/7.1.jpg"/> </div> <div class = "Fundo"> <p>Fórum Eleítoral da cidade </p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.810232,lng:-35.078009},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Fórum Eleitoral <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Correios </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/4.3.jpg"/> </div> <div class = "Fundo"> <p> Central dos correios </p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.810373,lng:-35.077551},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Hospital Municipal <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top">  <h3> Hospital </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/8.2.jpg"/> </div> <div class = "Fundo"> <p>Hospital da cidade</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.810743,lng:-35.078235},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Terraço Pizzaria <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.810743,lng:-35.078235},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Terraço Pizzaria <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.808706,lng:-35.075671},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Secretaria Municipal de Finanças <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.808706,lng:-35.075671},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Secretaria Municipal de Finanças <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.808477,lng:-35.076315},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Banco do Brasil <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.808030,lng:-35.077195},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Praça João Pessoa <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.808526,lng:-35.075853},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Farmácia Rio Tinto <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Farmacia Rio Tinto</h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/farmacia.jpg"/> </div> <div class = "Fundo"> <p>Farmacia popular Rio Tinto</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.807291,lng:-35.077650},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Super Mercado Santa Rita <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.806274,lng:-35.078450},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Super Mercado do Brizola <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.805162,lng:-35.075656},
-          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> UFPB campus IV <br> Imagens <br> Nivel de acessibilidade </h3> '
+         iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.811121,lng:-35.074630},
-          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Prefeitura de Rio Tinto <br> Imagens <br> Nivel de acessibilidade </h3> '
+         iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.810843,lng:-35.078471},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Conveniencia <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.809364,lng:-35.076694},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Posto de Gasolina <br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
         {
           coords:{lat:-6.806099,lng:-35.073970},
           iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          content:'<h3> Central de aulas UFPB Campus IV<br> Imagens <br> Nivel de acessibilidade </h3> '
+
+          content: '<div class = "corpo"> <div class = "top"> <h3> Mercadinho compre mais </h3> </div>                                                                                                                                           <div class = "direita"> <img width="200px" height="130px" src="../../images/images/locations/5.1.jpg"/> </div> <div class = "Fundo"> <p>Mercadinho de esquina</p> </div>   <br/>                                                                                                                           </div> <div class = "Fundo">Acessibilidade:</div> </div>'
         },
 
       ];
